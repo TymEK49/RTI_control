@@ -6,6 +6,8 @@ connect arduino TX to RTI 4 pin
 connect AV output to RTI 10 pin
 connect arduino GND and AV ground to RTI 7 pin
 
+Defaut settings after power up are: NTSC and full brightest
+
 use serial commands to change video settings:
 ntsc
 pal

@@ -8,7 +8,8 @@ connect arduino TX to RTI 4 pin
 connect AV output to RTI 10 pin
 connect arduino GND and AV ground to RTI 7 pin
 
-Defaut settings after power up are: NTSC and full brightest. You can change it editing line 19 and 20. For example, if you don't want the screen to pop up automatically after startup change line 19 to ```signal_state = screen_state[3];```
+Defaut settings after power up are: NTSC and full brightest. You can change it editing line 19 and 20. 
+For example, if you don't want the screen to pop up automatically after startup change line 19 to ```signal_state = screen_state[3];```
 
 USB serial commands to control screen:
 

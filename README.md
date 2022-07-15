@@ -4,12 +4,15 @@ Controll RTI screen using arduino and android
 Head unit on photo is from facebook group [Legend Volvo XC90 CAR AUDIO](https://www.facebook.com/groups/2444546715858068)
 ![screen1](https://github.com/TymEK49/RTI_control/blob/main/Finished_work.jpg)
 
-![wiring](https://github.com/TymEK49/RTI_control/blob/main/arduino_RTI.drawio.png)
 
-copy code, compile it and upload on arduino (I prefer arduino nano)
+copy code from '''app.ino''', compile it and upload on arduino (I prefer arduino nano)
 connect arduino TX to RTI 4 pin
 connect AV output to RTI 10 pin
 connect arduino GND and AV ground to RTI 7 pin
+Wiring scheme below
+
+![wiring](https://github.com/TymEK49/RTI_control/blob/main/arduino_RTI.drawio.png)
+
 
 Defaut settings after power up are: NTSC and full brightest. You can change it editing line 19 and 20. 
 For example, if you don't want the screen to pop up automatically after startup change line 19 to ```signal_state = screen_state[3];```

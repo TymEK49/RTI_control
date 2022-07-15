@@ -1,5 +1,6 @@
 # RTI_control
 Controll RTI screen using arduino and android
+![screen1](https://github.com/TymEK49/RTI_control/blob/main/Finished_work.jpg)
 
 ![wiring](https://github.com/TymEK49/RTI_control/blob/main/arduino_RTI.drawio.png)
 
@@ -34,5 +35,14 @@ USB serial commands to control screen:
 ```15``` - The brightest screen
 
 Commands like ```ntsc,8``` are also supported
+
+## How to control RTI from android/legend unit?
+
+Developing app with simple GUI in progress. If someone has a experience in Android developing app feel free to contact :D
+For now I recommend to download this [app](https://play.google.com/store/apps/details?id=de.kai_morich.serial_usb_terminal) and change Receive and Send Newline to '''NUL'''. Just like screenshot ![screen1](https://github.com/TymEK49/RTI_control/blob/main/screen1.png)
+Press connect in the right corner, wait few second and then you will be able to send commands. You can also set macros below
+![screen1](https://github.com/TymEK49/RTI_control/blob/main/screen4.png)
+![screen1](https://github.com/TymEK49/RTI_control/blob/main/screen3.png)
+![screen1](https://github.com/TymEK49/RTI_control/blob/main/screen2.png)
 
 More instructions and photos in progress

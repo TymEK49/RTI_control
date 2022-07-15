@@ -1,6 +1,8 @@
 # RTI_control
 Controll RTI screen using arduino
 
+![wiring](https://github.com/TymEK49/RTI_control/blob/main/arduino_RTI.drawio.png)
+
 copy code and compile 
 connect arduino TX to RTI 4 pin
 connect AV output to RTI 10 pin

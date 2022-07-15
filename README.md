@@ -1,5 +1,7 @@
 # RTI_control
 Controll RTI screen using arduino and android
+
+Head unit on photo is from facebook group [Legend Volvo XC90 CAR AUDIO](https://www.facebook.com/groups/2444546715858068)
 ![screen1](https://github.com/TymEK49/RTI_control/blob/main/Finished_work.jpg)
 
 ![wiring](https://github.com/TymEK49/RTI_control/blob/main/arduino_RTI.drawio.png)

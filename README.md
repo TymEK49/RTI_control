@@ -4,6 +4,9 @@ Controll RTI screen using arduino and android
 Head unit on photo is from facebook group [Legend Volvo XC90 CAR AUDIO](https://www.facebook.com/groups/2444546715858068)
 ![screen1](https://github.com/TymEK49/RTI_control/blob/main/Finished_work.jpg)
 
+tip: Do not try to pry with a screwdriver or anything from above. You will damage the material around the navigation, it's too fragile. It is better to remove the airflow below and push the rti cover out from the bottom
+
+Unscrew 5 torx20 and disconnect gray cable. 
 
 copy code from ```app.ino```, compile it and upload on arduino (I prefer arduino nano)
 connect arduino TX to RTI 4 pin

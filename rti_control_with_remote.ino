@@ -171,7 +171,7 @@ void commandsUSB(char signal[4]) {
     }
   if (signal[0] == char(0x78)){
   // sending 'x' key will set RTI in off after next boot, this is for android development purpose  
-    EEPROM.update(0, index_brightness);
+    EEPROM.update(0, 3);
   }
   if (signal[0] == char(0x2B)){
   // sending '+' key will set current brightness as ENTER key

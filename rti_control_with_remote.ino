@@ -78,12 +78,11 @@ void checkPowerState() {
     if (last_RTI_mode == b){
       last_RTI_mode = b - 10;
       signal_state = screen_state[last_RTI_mode];
+      return;
     }
-    else {
-    last_RTI_mode = 2;
-    signal_state = screen_state[last_RTI_mode];
-    EEPROM.update(0, last_RTI_mode + 10);
-    }
+  last_RTI_mode = 2;
+  signal_state = screen_state[last_RTI_mode];
+  EEPROM.update(0, last_RTI_mode + 10);
   }
 }
 
@@ -94,12 +93,11 @@ void checkBrightnessState() {
     if (last_RTI_brightness == b){
       index_brightness = b - 10;
       signal_brightness = screen_brightness[index_brightness];
+      return;
     }
-    else {
-    index_brightness = 15;
-    signal_brightness = screen_brightness[index_brightness];
-    EEPROM.update(1, index_brightness + 10);
-    }
+  index_brightness = 15;
+  signal_brightness = screen_brightness[index_brightness];
+  EEPROM.update(1, index_brightness + 10);
   }
 }
 
@@ -111,10 +109,8 @@ void checkEnterState() {
     if (last_enter_brightness == b){
       return;
     }
-    else {
-    last_enter_brightness = 15;
-    EEPROM.update(2, last_enter_brightness + 10);
-    }
+  last_enter_brightness = 15;
+  EEPROM.update(2, last_enter_brightness + 10);
   }
 }
 
@@ -125,11 +121,9 @@ void checkBackState() {
     if (last_back_brightness == b){
       return;
     }
-    else {
-    last_back_brightness = 3;
-    EEPROM.update(2, last_back_brightness + 10);
-    }
   }
+  last_back_brightness = 3;
+  EEPROM.update(3, last_back_brightness + 10);
 }
 
 void debounceSignal(char signal[4]) {
@@ -174,7 +168,6 @@ void handleSignal(char signal[4]) {
       EEPROM.update(1, index_brightness + 10);
     }
     else{
-      Serial.println(signal[0],HEX);
       commandsUSB(signal);
     }
 }

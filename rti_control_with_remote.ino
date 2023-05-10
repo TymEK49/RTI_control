@@ -97,6 +97,7 @@ void checkBrightnessState() {
     }
     else {
     index_brightness = 15;
+    signal_brightness = screen_brightness[index_brightness];
     EEPROM.update(1, index_brightness + 10);
     }
   }
@@ -116,16 +117,6 @@ void checkEnterState() {
     }
   }
 }
-
-
-// void checkBackState() {
-//   if (EEPROM.read(3) != NAN){
-//     last_back_brightness = EEPROM.read(3);    
-//   }
-//   else {
-//     EEPROM.update(3, 3);
-//   }
-// }
 
 void checkBackState() {
   // check if EEPROM memory is in 10 - 25 range 

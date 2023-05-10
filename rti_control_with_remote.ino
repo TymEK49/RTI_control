@@ -17,10 +17,10 @@ String sectionData;
 int a;
 int b;
 int stringData;
-int last_RTI_mode = 2;
-int last_RTI_brightness = 15;
-int enter_brightness = 15;
-int back_brightness = 3;
+int last_RTI_mode;
+int last_RTI_brightness;
+int last_enter_brightness;
+int last_back_brightness;
 int index_brightness;
 const int BUFFER_SIZE = 4;
 const long DEBOUNCE_TIME_MILS = 750;
@@ -72,41 +72,72 @@ void loop()
 }
 
 void checkPowerState() {
-  if (EEPROM.read(0) != NAN){  
-    last_RTI_mode = EEPROM.read(0);
+  // check if EEPROM memory is in 10 - 14 range 
+  last_RTI_mode = EEPROM.read(0);
+  for (b = 10; b < 14; b++){
+    if (last_RTI_mode == b){
+      last_RTI_mode = b - 10;
+      signal_state = screen_state[last_RTI_mode];
+    }
+    else {
+    last_RTI_mode = 2;
     signal_state = screen_state[last_RTI_mode];
-  }
-  else {
-    EEPROM.update(0, last_RTI_mode);
+    EEPROM.update(0, last_RTI_mode + 10);
+    }
   }
 }
 
 void checkBrightnessState() {
-  if (EEPROM.read(1) != NAN){  
-    last_RTI_brightness = EEPROM.read(1);
-    index_brightness = last_RTI_brightness;
-    signal_brightness = screen_brightness[index_brightness];
-  }
-  else {
-    EEPROM.update(1, last_RTI_brightness);
+  // check if EEPROM memory is in 10 - 25 range 
+  last_RTI_brightness = EEPROM.read(1);
+  for (b = 10; b < 26; b++){
+    if (last_RTI_brightness == b){
+      index_brightness = b - 10;
+      signal_brightness = screen_brightness[index_brightness];
+    }
+    else {
+    index_brightness = 15;
+    EEPROM.update(1, index_brightness + 10);
+    }
   }
 }
+
 
 void checkEnterState() {
-  if (EEPROM.read(2) != NAN){
-    enter_brightness = EEPROM.read(2);    
-  }
-  else {
-    EEPROM.update(2, enter_brightness);
+  // check if EEPROM memory is in 10 - 25 range 
+  last_enter_brightness = EEPROM.read(2);
+  for (b = 10; b < 26; b++){
+    if (last_enter_brightness == b){
+      return;
+    }
+    else {
+    last_enter_brightness = 15;
+    EEPROM.update(2, last_enter_brightness + 10);
+    }
   }
 }
 
+
+// void checkBackState() {
+//   if (EEPROM.read(3) != NAN){
+//     last_back_brightness = EEPROM.read(3);    
+//   }
+//   else {
+//     EEPROM.update(3, 3);
+//   }
+// }
+
 void checkBackState() {
-  if (EEPROM.read(3) != NAN){
-    back_brightness = EEPROM.read(3);    
-  }
-  else {
-    EEPROM.update(3, back_brightness);
+  // check if EEPROM memory is in 10 - 25 range 
+  last_back_brightness = EEPROM.read(3);
+  for (b = 10; b < 26; b++){
+    if (last_back_brightness == b){
+      return;
+    }
+    else {
+    last_back_brightness = 3;
+    EEPROM.update(2, last_back_brightness + 10);
+    }
   }
 }
 
@@ -121,37 +152,38 @@ void debounceSignal(char signal[4]) {
 void handleSignal(char signal[4]) {
     if (memcmp(signal, up1, 4) == 0 || memcmp(signal, up2, 4) == 0 || memcmp(signal, up3, 4) == 0){
       signal_state = screen_state[2];
-      EEPROM.update(0, 2);
+      EEPROM.update(0, 12);
     }
     if (memcmp(signal, down1, 4) == 0 || memcmp(signal, down2, 4) == 0) {
       signal_state = screen_state[3];
-      EEPROM.update(0, 3);
+      EEPROM.update(0, 13);
     }
     if (memcmp(signal, left1, 4) == 0 || memcmp(signal, left2, 4) == 0 || memcmp(signal, left3, 4) == 0){
       if (index_brightness > 0 && index_brightness < 16){
         index_brightness = index_brightness - 1;
         signal_brightness = screen_brightness[index_brightness];
-        EEPROM.update(1, index_brightness);
+        EEPROM.update(1, index_brightness + 10);
       }
     }
     if (memcmp(signal, right1, 4) == 0 || memcmp(signal, right2, 4) == 0) {
       if (index_brightness >= 0 && index_brightness < 15){
         index_brightness = index_brightness + 1;
         signal_brightness = screen_brightness[index_brightness];
-        EEPROM.update(1, index_brightness);
+        EEPROM.update(1, index_brightness + 10);
       }
     }
     if (memcmp(signal, enter, 4) == 0) {
-      index_brightness = enter_brightness;
+      index_brightness = last_enter_brightness;
       signal_brightness = screen_brightness[index_brightness];
-      EEPROM.update(1, index_brightness);
+      EEPROM.update(1, index_brightness + 10);
     }
     if (memcmp(signal, back1, 4) == 0 || memcmp(signal, back2, 4) == 0) {
-      index_brightness = back_brightness;
+      index_brightness = last_back_brightness;
       signal_brightness = screen_brightness[index_brightness];
-      EEPROM.update(1, index_brightness);
+      EEPROM.update(1, index_brightness + 10);
     }
     else{
+      Serial.println(signal[0],HEX);
       commandsUSB(signal);
     }
 }
@@ -175,12 +207,12 @@ void commandsUSB(char signal[4]) {
   }
   if (signal[0] == char(0x2B)){
   // sending '+' key will set current brightness as ENTER key
-    enter_brightness = index_brightness;
-    EEPROM.update(2, index_brightness);
+    last_enter_brightness = index_brightness;
+    EEPROM.update(2, index_brightness + 10);
   }
   if (signal[0] == char(0x2D)){
   // sending '-' key will set current brightness as BACK key  
-    back_brightness = index_brightness;
-    EEPROM.update(3, index_brightness);
+    last_back_brightness = index_brightness;
+    EEPROM.update(3, index_brightness + 10);
   }
 }

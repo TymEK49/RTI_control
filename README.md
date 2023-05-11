@@ -1,7 +1,7 @@
 # RTI Control
 
 <details>
-<summary>Standat disclaimer notice</summary>
+<summary>Standart disclaimer notice</summary>
 
 I am not taking any resposibility for bricked arduino, damaged RTI or any other damaged thing in your car. Always remember to cover metal pieces from arduino to avoid any electric damage. 
 </details>

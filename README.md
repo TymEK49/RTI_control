@@ -70,7 +70,7 @@ If you are upgrading your arduino from previos version to current you have to ad
 
 ### Compile and upload
 
-Download '''rti_control_with_remote.ino''' compile and upload it to your arduino. 
+Download ```rti_control_with_remote.ino``` (https://github.com/TymEK49/RTI_control/blob/main/rti_control_with_remote.ino) compile and upload it to your arduino. 
 If you are not familiar with arduino IDE don't worry. just download the Arduino IDE for your computer (https://docs.arduino.cc/software/ide-v1) then folow first 7 steps from official guide 'Using the offline IDE 1.x.x' - https://docs.arduino.cc/learn/starting-guide/the-arduino-software-ide. Then navigate to File > Open > select rti_control_with_remote.ino whoch you downloaded and select upload. 
 To verify if everything is uloaded correctly open 'Serial monitor' (icon in up-right corner) select 'baud 2400' and see if some code is running. 
 
@@ -155,7 +155,7 @@ Remember to check if everything works before
 
 You don't have to install it to make RTI work, it's optional. 
 GUI app in planns. 
-For now I recommend to download this [app](https://play.google.com/store/apps/details?id=de.kai_morich.serial_usb_terminal) and load this configuration '''RTI_serial_usb_terminal_cfg.txt'''
+For now I recommend to download this [app](https://play.google.com/store/apps/details?id=de.kai_morich.serial_usb_terminal) and load this configuration ```RTI_serial_usb_terminal_cfg.txt``` (https://github.com/TymEK49/RTI_control/blob/main/RTI_serial_usb_terminal_cfg.txt)
 
 ![screen05](https://github.com/TymEK49/RTI_control/blob/main/screenshots/screen05.png)
 

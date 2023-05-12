@@ -12,7 +12,7 @@ tip: Do not try to pry with a screwdriver or anything from above. You will damag
 
 Unscrew 5 torx20 and disconnect gray cable. 
 
-copy code from ```app.ino```, compile it and upload on arduino (I prefer arduino nano)
+copy code from ```old_app.ino```, compile it and upload on arduino (I prefer arduino nano)
 connect arduino TX to RTI 4 pin
 connect AV output to RTI 10 pin
 connect arduino GND and AV ground to RTI 7 pin

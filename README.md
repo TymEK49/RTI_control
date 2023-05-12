@@ -98,7 +98,7 @@ Disconnect cable from hazard lights
 
 Push RTI cover from below 
 
-![04](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/01.jpg)
+![04](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/04.jpg)
 
 Unscrew 5 torx20 and disconnect GRAY cable from RTI (BLUE is power).
 
@@ -134,7 +134,7 @@ You can also connect GND from Arduino to GND Video.
 ![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05b.jpg)
 My new setup
 
-![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05b.jpg) 
+![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05a.jpg) 
 This is from previous installtion, please rember to add cable betwen RX and PIN 5 on RTI.
 
 ![06](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/06.jpg)

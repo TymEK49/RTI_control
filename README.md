@@ -1,7 +1,7 @@
 # RTI Control
 
 <details>
-<summary>Standart disclaimer notice</summary>
+<summary>Standat disclaimer notice</summary>
 
 I am not taking any resposibility for bricked arduino, damaged RTI or any other damaged thing in your car. Always remember to cover metal pieces from arduino to avoid any electric damage. 
 </details>
@@ -12,7 +12,9 @@ I'm happy to present to you my updated code for taking control over Volvo RTI sa
 ![screen1](https://github.com/TymEK49/RTI_control/blob/main/pictures/Finished_work.jpg)
 Head unit on photo is from facebook group [Legend Volvo XC90 CAR AUDIO](https://www.facebook.com/groups/2444546715858068)
 
-This mod should work on any P2 Volvo RTI screen (like xc90, xc70, s80 etc).
+This mod should work on any P2 Volvo RTI screen (like xc90, xc70, s80 etc). You can connect your navigation screen to any analog video source, like android heaunits, miracast, reverse camera etc. 
+
+[!video](https://youtu.be/I0WuGjVyAK0)
 
 ## Code Functions: 
 - changing screen mode (rgb, pal, ntsc, off)
@@ -79,18 +81,47 @@ If you are using Arduino Nano propably you have another processor selected. Go t
 
 ### Getting to RTI
 
+This process is for XC90. 
+<details>
+<summary>Click to open gallery</summary>
+
 Remove the grid around the rti screen.
-tip: Do not try to pry with a screwdriver or anything from above. You will damage the material around the navigation, it's too fragile. It is better to remove the airflow below and push the rti cover out from the bottom
+tip: Do not try to pry with a screwdriver or anything from above. You will damage the material around the navigation, it's too fragile. It is better to remove the airflow below and push the rti cover out from the 
+
+![01](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/01.jpg)
+
+![02](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/02.jpg)
+
+Disconnect cable from hazard lights
+
+![03](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/03.jpg)
+
+Push RTI cover from below 
+
+![04](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/01.jpg)
 
 Unscrew 5 torx20 and disconnect GRAY cable from RTI (BLUE is power).
 
 ![RTI](https://github.com/TymEK49/RTI_control/blob/main/pictures/RTI_connectors.png)
+</details>
+
 
 ### Wiring
 
 Prepare cables like on scheme below
 
 ![wiring](https://github.com/TymEK49/RTI_control/blob/main/pictures/RTI_REMOTE_schema.png)
+
+My wires:
+
+Arduino cables:
+![09](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/09.jpg) 
+just add here third cable for remote control!
+
+Video cables:
+![09](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/09.jpg) 
+
+You can also connect GND from Arduino to GND Video.
 
 - connect arduino TX to RTI 4 pin
 - connect arduino RX to RTI 5 pin
@@ -100,8 +131,27 @@ Prepare cables like on scheme below
 
 <strong>IMPORTANT! Remember to cover arduino body from any metal of your car! Use some plastic case or even isolation tape!</strong>
 
+![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05b.jpg)
+My new setup
+
+![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05b.jpg) 
+This is from previous installtion, please rember to add cable betwen RX and PIN 5 on RTI.
+
+![06](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/06.jpg)
+On this photo serial from remote controll cable is missing, please rember to plug in pin 5 on RTI.
+Also, you can see that I forgot to solder GND cables to ech other, so I just used metal frame as GND for arduino. 
+
+If you are installing this mod for Legend Android Head Unit, here is the moment to connect everything to USB hub and hide it.
+
+![07](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/07.jpg)
+
+![08](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/08.jpg)
+
+Remember to check if everything works before 
+
 ## OPTIONAL - sending commands from android
 
+You don't have to install it to make RTI work, it's optional. 
 GUI app in planns. 
 For now I recommend to download this [app](https://play.google.com/store/apps/details?id=de.kai_morich.serial_usb_terminal) and load this configuration '''RTI_serial_usb_terminal_cfg.txt'''
 
@@ -118,7 +168,9 @@ Buttons 'Enter key' and 'Back key' will save current brightness to hotkeys. Rest
 I would like to say thank you to those people:
 - Piotr Kamoda for initial code to start RTI, schemas and knowledge
 - Sylwester Turski for helping me to manage delays in remote signal
-- Alen Osmanovic for tests.
+- Liam Sears for tests and ideas
+- Alen Osmanovic for tests
+- Roman Majdiš for tests and ideas
 - Rurik Wolfe for updated RTI connector scheme
 
 This code is free to use but I'll be glad if you buy me coffee or beer 😁

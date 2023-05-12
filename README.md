@@ -131,10 +131,12 @@ You can also connect GND from Arduino to GND Video.
 
 <strong>IMPORTANT! Remember to cover arduino body from any metal of your car! Use some plastic case or even isolation tape!</strong>
 
-![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05b.jpg)
+![05a](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05a.jpg)
 My new setup
 
-![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05a.jpg) 
+
+
+![05b](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05b.jpg) 
 This is from previous installtion, please rember to add cable betwen RX and PIN 5 on RTI.
 
 ![06](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/06.jpg)

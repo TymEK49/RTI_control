@@ -119,7 +119,7 @@ Arduino cables:
 just add here third cable for remote control!
 
 Video cables:
-![09](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/09.jpg) 
+![10](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/10.jpg) 
 
 You can also connect GND from Arduino to GND Video.
 

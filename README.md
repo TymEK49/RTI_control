@@ -168,7 +168,7 @@ Buttons 'Enter key' and 'Back key' will save current brightness to hotkeys. Rest
 ## Thanks
 
 I would like to say thank you to those people:
-- Piotr Kamoda for initial code to start RTI, schemas and knowledge
+- Piotr Kapica for initial code to start RTI, schemas and knowledge
 - Sylwester Turski for helping me to manage delays in remote signal
 - Liam Sears for tests and ideas
 - Alen Osmanovic for tests

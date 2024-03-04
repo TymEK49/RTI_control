@@ -181,7 +181,7 @@ void commandsUSB(char signal[4]) {
   for (b = 0; b < 4; b++){
     if (signal[0] == codes_state[b]){
       signal_state = screen_state[b];
-      EEPROM.update(0, b);
+      EEPROM.update(0, b + 10);
     }
   }
   for (b = 0; b < 16; b++){

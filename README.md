@@ -131,6 +131,28 @@ You can also connect GND from Arduino to GND Video.
 
 <strong>IMPORTANT! Remember to cover arduino body from any metal of your car! Use some plastic case or even isolation tape!</strong>
 
+
+### Original RTI cable pinout
+
+| Pin | Wire color | Function |
+|---:|---|---|
+| 1 | Red | — |
+| 2 | Green | — |
+| 3 | Purple | — |
+| 4 | Pink | Serial data to RTI (Arduino TX) |
+| 5 | Brown | Serial data from RTI (Arduino RX) |
+| 6 | Blue | — |
+| 7 | Black | Ground |
+| 8 | Yellow | — |
+| 9 | Grey | — |
+| 10 | White | Composite video input |
+
+The pin functions marked with `—` are not used by this project.
+
+
+
+
+
 ![05a](https://github.com/TymEK49/RTI_control/blob/main/pictures/installation/05a.jpg)
 My new setup
 
